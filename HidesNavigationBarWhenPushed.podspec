@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "HidesNavigationBarWhenPushed"
-  s.version = "1.0"
+  s.version = "1.0.1"
   s.summary = "A library, which adds the ability to hide navigation bar when view controller is pushed via hidesNavigationBarWhenPushed flag"
   s.homepage = "https://github.com/gontovnik/HidesNavigationBarWhenPushed"
   s.license = { :type => "MIT", :file => "LICENSE" }
