@@ -26,12 +26,6 @@ open class NavigationBar: UINavigationBar {
     
     var height: CGFloat?
     
-    private var barBackgroundView: UIView? {
-        return subviews.first(where: { view -> Bool in
-            return NSStringFromClass(type(of: view)) == "_UIBarBackground"
-        })
-    }
-    
     private var backgroundView: UIView? {
         return value(forKey: "_backgroundView") as? UIView
     }
@@ -93,8 +87,8 @@ open class NavigationBar: UINavigationBar {
         super.layoutSubviews()
         
         if let height = height {
-            barBackgroundView?.frame.origin.y = bounds.height - height
-            barBackgroundView?.frame.size.height = height
+            backgroundView?.frame.origin.y = bounds.height - height
+            backgroundView?.frame.size.height = height
         }
     }
 }
