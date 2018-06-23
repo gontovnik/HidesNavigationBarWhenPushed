@@ -20,7 +20,7 @@
 
 import UIKit
 
-class NavigationBar: UINavigationBar {
+open class NavigationBar: UINavigationBar {
     
     // MARK: - Vars
     
@@ -44,12 +44,12 @@ class NavigationBar: UINavigationBar {
     
     // MARK: - Constructors
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -66,11 +66,10 @@ class NavigationBar: UINavigationBar {
     
     // MARK: - Methods
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if backgroundView?.isHidden != isBackgroundViewHidden {
             backgroundView?.isHidden = isBackgroundViewHidden
         }
-        
     }
     
     func copyNavigationBar() -> NavigationBar {
@@ -90,7 +89,7 @@ class NavigationBar: UINavigationBar {
     
     // MARK: - Layout
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         
         if let height = height {

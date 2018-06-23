@@ -20,7 +20,7 @@
 
 import UIKit
 
-class NavigationController: UINavigationController {
+open class NavigationController: UINavigationController {
     
     // MARK: - Types
     
@@ -66,7 +66,7 @@ class NavigationController: UINavigationController {
     
     // MARK: - Methods
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         let currentViewController = viewControllers.last
         
         if let currentViewController = currentViewController as? ViewController,
@@ -94,7 +94,7 @@ class NavigationController: UINavigationController {
         super.pushViewController(viewController, animated: true)
     }
     
-    @discardableResult override func popViewController(animated: Bool) -> UIViewController? {
+    @discardableResult override open func popViewController(animated: Bool) -> UIViewController? {
         if viewControllers.count > 1 {
             if let currentViewController = viewControllers.last as? ViewController,
                 let previousViewController = viewControllers[viewControllers.count - 2] as? ViewController {
@@ -104,7 +104,7 @@ class NavigationController: UINavigationController {
         return super.popViewController(animated: animated)
     }
     
-    @discardableResult override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+    @discardableResult override open func popToRootViewController(animated: Bool) -> [UIViewController]? {
         if viewControllers.count > 1 {
             if let currentViewController = viewControllers.last as? ViewController,
                 let previousViewController = viewControllers.first as? ViewController {
@@ -135,7 +135,7 @@ class NavigationController: UINavigationController {
     
     // MARK: -
     
-    override func setNavigationBarHidden(_ hidden: Bool, animated: Bool) {
+    override open func setNavigationBarHidden(_ hidden: Bool, animated: Bool) {
         super.setNavigationBarHidden(hidden, animated: animated)
         if let viewController = visibleViewController as? ViewController, viewController.hidesNavigationBarWhenPushed && hidden == false {
             forceHideNavigationBar()

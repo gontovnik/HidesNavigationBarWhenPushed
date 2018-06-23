@@ -20,7 +20,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+open class ViewController: UIViewController {
     
     // MARK: - Vars
     
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         static var fakeNavigationBar = "fakeNavigationBar"
     }
     
-    var hidesNavigationBarWhenPushed = false
+    open var hidesNavigationBarWhenPushed = false
     var viewWillAppearNavigationBarUpdatesBlock: (() -> Void)?
     
     var fakeNavigationBar: NavigationBar? {
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewWillAppearNavigationBarUpdatesBlock?()
         viewWillAppearNavigationBarUpdatesBlock = nil
