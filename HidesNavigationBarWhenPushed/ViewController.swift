@@ -24,21 +24,10 @@ open class ViewController: UIViewController {
     
     // MARK: - Vars
     
-    private struct AssociatedKeys {
-        static var fakeNavigationBar = "fakeNavigationBar"
-    }
-    
     open var hidesNavigationBarWhenPushed = false
     var viewWillAppearNavigationBarUpdatesBlock: (() -> Void)?
     
-    var fakeNavigationBar: NavigationBar? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.fakeNavigationBar) as? NavigationBar
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.fakeNavigationBar, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
+    var fakeNavigationBar: NavigationBar?
     
     // MARK: - Lifecycle
     
