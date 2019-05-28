@@ -2,7 +2,7 @@
 
 A library, which adds the ability to hide navigation bar when view controller is pushed via `hidesNavigationBarWhenPushed` flag.
 
-**FYI: I use Apple internal API to make it work.**
+**FYI: I use Apple internal API to make it work. Please remember that Apple might reject your app during app review process.**
 
 ## Context
 
