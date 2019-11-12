@@ -36,7 +36,7 @@ open class NavigationController: UINavigationController {
     
     // MARK: - Constructors
     
-    init() {
+    public init() {
         super.init(navigationBarClass: NavigationBar.self, toolbarClass: nil)
     }
     
@@ -46,7 +46,7 @@ open class NavigationController: UINavigationController {
     
     // MARK: -
     
-    override init(rootViewController: UIViewController) {
+    override public init(rootViewController: UIViewController) {
         super.init(navigationBarClass: NavigationBar.self, toolbarClass: nil)
         viewControllers = [rootViewController]
         commonInit()
